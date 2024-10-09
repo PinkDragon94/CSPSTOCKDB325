@@ -28,7 +28,7 @@
   }
   
   .social-media a:hover {
-    color: #f39c12; /* Highlight color on hover */
+    color: black; /* Highlight color on hover */
   }
   
   @media (max-width: 768px) {

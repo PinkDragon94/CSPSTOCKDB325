@@ -33,7 +33,7 @@ const HomePage = () => {
 
       {/* Add the Stock Table here */}
       <StockTable />
-
+      
       {/* Add Footer component */}
       <Footer />
     </div>  
