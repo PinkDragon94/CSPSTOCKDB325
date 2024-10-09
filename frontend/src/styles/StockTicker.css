@@ -1,0 +1,30 @@
+/* StockTicker.css */
+
+.stock-ticker {
+    background-color: #007bff; /* Change to your preferred background color */
+    color: white;
+    padding: 10px;
+    overflow: hidden; /* Prevent overflow */
+    white-space: nowrap; /* Prevent wrapping */
+    position: relative;
+  }
+  
+  .ticker-content {
+    display: inline-block;
+    animation: scroll 10s linear infinite; /* Adjust duration as needed */
+  }
+  
+  .stock-item {
+    display: inline-block;
+    margin-right: 30px; /* Space between stocks */
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(100%); /* Start from right */
+    }
+    100% {
+      transform: translateX(-100%); /* End to left */
+    }
+  }
+  

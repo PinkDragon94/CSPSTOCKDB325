@@ -1,20 +1,20 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './components/Home';
-import About from './components/About';
-import Dashboard from './components/Dashboard';
-import Blog from './components/Blog';
-import Shop from './components/Shop';
+import HomePage from './pages/HomePage'; // Updated import for HomePage
+import AboutPage from './pages/AboutPage'; 
+import BlogPage from './pages/BlogPage'; 
+import ShopPage from './pages/ShopPage'; 
+import DashboardPage from './pages/DashboardPage'; 
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/shop" element={<Shop />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/dashboard" element={<DashboardPage/>} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/shop" element={<ShopPage />} />
       </Routes>
     </Router>
   );
