@@ -1,0 +1,2 @@
+MONGO_URI=mongodb+srv://cherandwhite:<db_password>@cluster0.hrhvy.mongodb.net/
+PORT=5000
