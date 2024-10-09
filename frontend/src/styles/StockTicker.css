@@ -1,17 +1,17 @@
 /* StockTicker.css */
 
 .stock-ticker {
-    background-color: #007bff; /* Change to your preferred background color */
+    background-color: rgb(230, 12, 121); 
     color: white;
     padding: 10px;
-    overflow: hidden; /* Prevent overflow */
-    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden; 
+    white-space: nowrap; 
     position: relative;
   }
   
   .ticker-content {
     display: inline-block;
-    animation: scroll 10s linear infinite; /* Adjust duration as needed */
+    animation: scroll 10s linear infinite; 
   }
   
   .stock-item {

@@ -6,7 +6,7 @@
 }
 
 .navbar {
-  background-color: #007bff;
+  background-color: rgb(230, 12, 121);
   color: white;
   padding: 10px 20px;
   display: flex;
@@ -57,7 +57,7 @@
 .footer .social-media a {
   margin: 0 10px;
   text-decoration: none;
-  color: #007bff;
+  color: rgb(230, 12, 121);
 }
 
   

@@ -1,6 +1,7 @@
 import React from 'react';
 import DashboardCard from '../components/DashboardCard';
 import StockTicker from '../components/StockTicker'; // Import the ticker
+import Footer from '../components/Footer';
 import '../styles/DashboardPage.css'; 
 
 const DashboardPage = () => {
@@ -26,15 +27,9 @@ const DashboardPage = () => {
           <DashboardCard key={item.id} data={item} />
         ))}
       </div>
-      <footer className="footer">
-        <p>&copy; 2024 PinkDragon94. All rights reserved.</p>
-        <div className="social-media">
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-          <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
-        </div>
-      </footer>
-    </div>
+        {/* Add Footer component */}
+        <Footer />
+    </div>  // Close the outer div
   );
 };
 

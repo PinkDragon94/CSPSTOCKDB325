@@ -6,7 +6,7 @@
   }
   
   .navbar {
-    background-color: #007bff;
+    background-color: rgb(230, 12, 121);
     color: white;
     padding: 10px 20px;
     display: flex;
@@ -47,7 +47,7 @@
     margin-top: 20px;
     padding: 10px;
     text-align: center;
-    background-color: #007bff;
+    background-color: rgb(230, 12, 121);
     color: white;
   }
   

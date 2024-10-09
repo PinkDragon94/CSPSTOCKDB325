@@ -1,0 +1,40 @@
+/* Footer.css */
+
+.footer {
+    background-color: rgb(230, 12, 121);
+    color: #ecf0f1;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .social-media {
+    margin-top: 10px;
+  }
+  
+  .social-media a {
+    color: #ecf0f1;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .social-media a:hover {
+    color: #f39c12; /* Highlight color on hover */
+  }
+  
+  @media (max-width: 768px) {
+    .social-media a {
+      display: block;
+      margin: 5px 0;
+    }
+  }
+  

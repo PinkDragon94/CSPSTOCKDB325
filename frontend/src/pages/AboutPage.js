@@ -1,5 +1,6 @@
 import React from 'react';
-import '../styles/AboutPage.css'; // Correct path to CSS
+import Footer from '../components/Footer';
+ import '../styles/AboutPage.css'; // Correct path to CSS
 
 const AboutPage = () => {
   return (
@@ -24,15 +25,9 @@ const AboutPage = () => {
         <h3>Our Mission</h3>
         <p>Our mission is to empower individuals with the information they need to succeed in the stock market.</p>
       </div>
-      <footer className="footer">
-        <div className="social-media">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
-        </div>
-        <p>&copy; {new Date().getFullYear()} Stock Predictions Dashboard. All rights reserved.</p>
-      </footer>
-    </div>
+        {/* Add Footer component */}
+        <Footer />
+    </div>  // Close the outer div
   );
 };
 
