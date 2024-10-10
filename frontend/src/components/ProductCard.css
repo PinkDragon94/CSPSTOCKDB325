@@ -8,6 +8,7 @@
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
+    border: solid 1px rgb(230, 12, 121);
   }
   
   .product-card:hover {
@@ -31,6 +32,7 @@
   
   .product-buttons {
     margin-top: 10px;
+    
   }
   
   .buy-button {
@@ -47,5 +49,21 @@
   
   .buy-button:hover {
     background-color: #218838; /* Darker green */
+  }
+  
+  .add-to-cart-button {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    background-color:   rgb(230, 12, 121);
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .buy-button:hover {
+    background-color: black; /* Darker green */
   }
   

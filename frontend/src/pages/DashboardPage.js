@@ -19,8 +19,8 @@ const DashboardPage = () => {
       </nav>
       <StockTicker /> {/* Add the stock ticker here */}
       <header className="hero">
-        <h2>Your Dashboard</h2>
-        <p>Analyze and track your stock predictions effectively.</p>
+        <h2>Dashboard</h2>
+        <p>Analyze and track stock predictions effectively.</p>
       </header>
       <div className="dashboard-cards">
         {data.map((item) => (
