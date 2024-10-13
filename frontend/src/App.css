@@ -36,3 +36,38 @@
     transform: rotate(360deg);
   }
 }
+/* App.css */
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+
+/* Navigation links styles */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px; /* Space between links */
+}
+
+.nav-links li {
+  display: inline; /* Inline display for links */
+}
+
+/* Button styles for navigation links */
+.nav-links .btn {
+  background-color: #007bff; /* Button background color */
+  color: white; /* Button text color */
+  padding: 10px 15px; /* Padding for button */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.nav-links .btn:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+

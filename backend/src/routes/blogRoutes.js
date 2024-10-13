@@ -1,11 +1,13 @@
-// backend/routes/blogRoutes.js
-import express from 'express';
-import { getBlogs, createBlog } from '../controllers/blogController.js';
-
+const express = require('express');
+const blogController = require('../controllers/blogController');
 const router = express.Router();
 
-router.get('/', getBlogs);
-router.post('/', createBlog);
-// Add other routes...
+// Define routes using controller methods
+router.get('/', blogController.getAllPosts);
+router.get('/:id', blogController.getPostById);
+router.post('/', blogController.createPost);
+router.put('/:id', blogController.updatePost);
+router.delete('/:id', blogController.deletePost);
 
-export default router;
+module.exports = router;
+

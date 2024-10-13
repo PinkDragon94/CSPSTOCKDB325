@@ -31,6 +31,7 @@ const BlogPage = () => {
           <li><a href="/blog">Blog</a></li>
           <li><a href="/shop">Shop</a></li>
           <li><a href="/dashboard">Dashboard</a></li>
+         
         </ul>
       </nav>
 

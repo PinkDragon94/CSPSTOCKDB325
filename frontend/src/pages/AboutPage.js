@@ -13,7 +13,7 @@ const AboutPage = () => {
           <li><a href="/blog">Blog</a></li>
           <li><a href="/shop">Shop</a></li>
           <li><a href="/dashboard">Dashboard</a></li>
-        </ul>
+                 </ul>
       </nav>
       <header className="hero">
         <h2>About Us</h2>
