@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const api_key = process.env.REACT_APP_API_KEY
-console.log(api_key); // Log API key to verify it's loaded correctly
+console.log(api_key); 
 
 // Create an instance of axios with the base URL and headers for the Alpha Vantage API
 const instance = axios.create({
@@ -47,6 +47,10 @@ const stockAPI = {
         return chartData; // Return formatted data for the chart
     },
 };
-
+export const fetchIndicators = async (ticker) => {
+    const res = await fetch(`/api/indicators/${ticker}`);
+    return res.json();
+  };
+  
 export default stockAPI;
 

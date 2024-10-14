@@ -15,9 +15,12 @@ const userRoutes = require('./routes/userRoutes.js');
 app.use(cors());
 app.use(express.json());
 app.use(logger); // Log requests
-app.use('/api/blogs', blogRoutes);
 app.use(errorHandler); // Error handling middleware
+app.use('/api/blogs', blogRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/shop', shopRoutes);
+app.use('/api/stocks', stockRoutes);
+
 
 const PORT = process.env.PORT || 5000;
 
@@ -34,8 +37,11 @@ app.get('/', (req, res) => {
   });
   const blogRoutes = require('./routes/blog');
 const shopRoutes = require('./routes/shop');
-app.use('/api/blog', blogRoutes);
-app.use('/api/shop', shopRoutes);
+const stockRoutes = require('./routes/stock');
+
+
+
+
 
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
