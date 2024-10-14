@@ -1,26 +1,10 @@
-// src/pages/SignUpPage.js
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
-import { useNavigate } from 'react-router-dom';
 import StockTicker from '../components/StockTicker';
 import Footer from '../components/Footer';
-import SignUp from '../components/SignUp'; // Import SignUp component
+import SignUp from '../components/SignUp';
 
 const SignUpPage = () => {
-  const { googleSignUp } = useAuth();
-  const navigate = useNavigate();
-
-  const handleGoogleSignUp = async () => {
-    try {
-      await googleSignUp();
-      navigate('/dashboard');
-    } catch (error) {
-      console.error('Failed to sign up with Google', error);
-    }
-  };
-
   return (
     <div>
       <nav className="navbar">
@@ -38,7 +22,7 @@ const SignUpPage = () => {
       <StockTicker />
       <div>
         <h2>Sign Up</h2>
-        <SignUp /> {/* Include the SignUp component */}
+        <SignUp />
       </div>
       <Footer />
     </div>
@@ -46,3 +30,4 @@ const SignUpPage = () => {
 };
 
 export default SignUpPage;
+

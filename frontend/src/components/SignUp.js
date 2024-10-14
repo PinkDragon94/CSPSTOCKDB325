@@ -1,9 +1,6 @@
-// src/components/SignUp.js
-
 import React, { useState } from 'react';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { signInWithPopup } from 'firebase/auth';
-import { auth, provider } from '.src/firebase'; // Ensure provider is imported from your firebase.js file
+import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { auth, googleAuthProvider as provider } from '../firebase'; // Corrected path
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
@@ -18,11 +15,11 @@ const SignUp = () => {
 
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      setSuccess('User registered successfully!'); // Success message
-      setEmail(''); // Clear email input
-      setPassword(''); // Clear password input
+      setSuccess('User registered successfully!');
+      setEmail('');
+      setPassword('');
     } catch (err) {
-      setError(err.message); // Set error message
+      setError(err.message);
       console.error('Error signing up:', err);
     }
   };
@@ -33,9 +30,9 @@ const SignUp = () => {
 
     try {
       await signInWithPopup(auth, provider);
-      setSuccess('User signed up with Google successfully!'); // Success message
+      setSuccess('User signed up with Google successfully!');
     } catch (err) {
-      setError(err.message); // Set error message
+      setError(err.message);
       console.error('Error signing up with Google:', err);
     }
   };
