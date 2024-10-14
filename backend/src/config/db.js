@@ -1,16 +1,24 @@
-import mongoose from 'mongoose';
+import { MongoClient } from 'mongodb';
+import "dotenv/config";
 
+// MongoDB native connection
+const connection = process.env.DB_URI;
+
+let db;
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI, {
+    const client = new MongoClient(connection, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    console.log('MongoDB connected');
+    await client.connect();
+    db = client.db("sneaker-app"); // Database reference
+    console.log("MongoDB connected using MongoClient");
   } catch (error) {
-    console.error('MongoDB connection failed', error);
-    process.exit(1);
+    console.error("Error connecting to MongoDB", error);
+    process.exit(1); // Exit process if connection fails
   }
 };
 
-export default connectDB;
+export { connectDB, db }; // Named exports for both connectDB and db
+
