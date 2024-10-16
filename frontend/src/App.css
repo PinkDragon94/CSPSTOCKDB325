@@ -57,7 +57,7 @@ body {
 
 /* Button styles for navigation links */
 .nav-links .btn {
-  background-color: #007bff; /* Button background color */
+  background-color: green; /* Button background color */
   color: white; /* Button text color */
   padding: 10px 15px; /* Padding for button */
   border: none; /* Remove default border */
@@ -67,7 +67,7 @@ body {
 }
 
 .nav-links .btn:hover {
-  background-color: #0056b3; /* Darker shade on hover */
+  background-color: black; /* Darker shade on hover */
 }
 
 

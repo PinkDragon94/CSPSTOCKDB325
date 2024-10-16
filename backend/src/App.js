@@ -4,9 +4,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const sneakerRoutes = require('./routes/sneakers');
 const userRoutes = require('./routes/users');
-const designRoutes = require('./routes/designs');
 const commentRoutes = require('./routes/comments');
 require('dotenv').config();
 
@@ -15,10 +13,12 @@ const app = express();
 app.use(bodyParser.json());
 
 
-app.use('/sneakers', sneakerRoutes);
 app.use('/users', userRoutes);
-app.use('/designs', designRoutes);
+app.use('/user', userRoutes);
+app.use('/blog' ,userRoutes);
 app.use('/comments', commentRoutes);
+app.use('/stock', stockRoutes);
+app.use('/auth', authRoutes);
 
 const PORT = process.env.PORT || 5000;
 mongoose.connect(process.env.DB_URI,)
@@ -30,4 +30,3 @@ mongoose.connect(process.env.DB_URI,)
 
 )
   .catch(err => console.error(err,'mongodb connection error'));
-  

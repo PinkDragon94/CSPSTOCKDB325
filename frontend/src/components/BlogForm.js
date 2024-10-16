@@ -25,6 +25,7 @@ const BlogForm = () => {
       });
       const data = await response.json();
       console.log('Blog post created:', data);
+      // Optionally reset form or trigger a re-fetch of blog posts here
     } catch (err) {
       console.error('Error creating blog post:', err);
     }

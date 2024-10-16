@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import StockTicker from '../components/StockTicker';
+// import StockTicker from '../components/StockTicker';
 import Footer from '../components/Footer';
 import SignUp from '../components/SignUp';
 
@@ -19,10 +19,9 @@ const SignUpPage = () => {
           <li><Link to="/signup" className="btn">Sign Up</Link></li>
         </ul>
       </nav>
-      <StockTicker />
+      {/* <StockTicker /> */}
       <div>
-        <h2>Sign Up</h2>
-        <SignUp />
+                <SignUp />
       </div>
       <Footer />
     </div>

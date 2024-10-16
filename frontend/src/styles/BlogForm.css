@@ -1,0 +1,23 @@
+form {
+    margin-bottom: 20px;
+  }
+  
+  form input,
+  form textarea {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  form button {
+    background-color: rgb(230, 12, 121);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  
+  

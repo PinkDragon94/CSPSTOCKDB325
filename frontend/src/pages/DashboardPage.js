@@ -1,37 +1,43 @@
+// src/pages/DashboardPage.js
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import DashboardCard from '../components/DashboardCard';
-import ChartComponent from '../components/ChartComponent';
+import { getDailyStockPrices } from '../components/API'; // Correct API import
+import ChartComponent from '../components/Chart';
 import StockTicker from '../components/StockTicker';
 import Footer from '../components/Footer';
-import '../styles/DashboardPage.css';
 import TechnicalIndicators from '../components/TechnicalIndicators';
+import StockTable from '../components/StockTable';
+import '../styles/DashboardPage.css';
+import Signals from '../components/Signals'; // Assuming you have a Signals component
 
 const DashboardPage = () => {
   const [stockData, setStockData] = useState(null);
-  const [ticker, setTicker] = useState('AAPL'); // Default ticker
+  const [ticker, setTicker] = useState('AAPL'); // Default stock symbol
+  const [loading, setLoading] = useState(true);
 
-  // Function to analyze stock
-  const analyzeStock = async (ticker) => {
-    try {
-      const response = await axios.post('http://localhost:5000/api/stocks/analyze', { ticker });
-      setStockData(response.data);
-    } catch (error) {
-      console.error('Error fetching stock analysis', error);
-    }
-  };
-
-  // Fetch data when ticker changes
+  // Fetch stock data based on the selected ticker
   useEffect(() => {
-    if (ticker) {
-      analyzeStock(ticker); // Analyze the stock based on the ticker
-    }
+    const fetchStockData = async () => {
+      setLoading(true);
+      try {
+        const data = await getDailyStockPrices(ticker);
+        console.log('Fetched stock data:', data);
+        setStockData(data);
+      } catch (error) {
+        console.error('Error fetching stock analysis:', error);
+        setStockData(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchStockData();
   }, [ticker]);
 
-  // Handle input change for stock ticker
-  const handleTickerChange = (e) => {
-    setTicker(e.target.value); // Update the ticker state
+  const handleTickerChange = (newTicker) => {
+    setTicker(newTicker);
   };
+
+  const hasValidData = stockData && stockData.chartData && stockData.chartData.length > 0;
 
   return (
     <div className="dashboard">
@@ -46,41 +52,38 @@ const DashboardPage = () => {
         </ul>
       </nav>
 
-      {/* Stock Ticker */}
-      <StockTicker />
+      <StockTicker onTickerChange={handleTickerChange} />
 
       <header className="hero">
         <h2>Dashboard</h2>
         <p>Analyze and track stock predictions effectively.</p>
       </header>
 
-      {/* Input field for stock ticker */}
-      <div className="ticker-input">
-        <input 
-          type="text" 
-          placeholder="Enter Stock Ticker" 
-          value={ticker} 
-          onChange={handleTickerChange} 
-        />
-      </div>
-
-      {/* Dashboard Cards */}
-      <div className="dashboard-cards">
-        {data.map((item) => (
-          <DashboardCard key={item.id} data={item} />
-        ))}
-      </div>
-
-      {/* Stock Analysis Chart */}
-      {stockData && (
-        <div className="chart-section">
-          <h2>Stock Analysis for {ticker}</h2>
+      {loading && <div>Loading...</div>}
+      {!loading && !hasValidData && <div>No data available for the selected stock symbol.</div>}
+      {hasValidData && (
+        <>
+          {/* ChartComponent */}
           <ChartComponent data={stockData} />
-        </div>
+
+          {/* Stock Table */}
+          <StockTable data={stockData.chartData} /> {/* Ensure chartData is passed to Table */}
+
+          {/* Technical Indicators */}
+          <TechnicalIndicators ticker={ticker} stockData={stockData} />
+
+          {/* Signals Component */}
+          <Signals data={stockData} /> {/* Assuming Signals component takes stock data */}
+        </>
       )}
 
-      {/* Technical Indicators */}
-      <TechnicalIndicators ticker={ticker} />
+      <input 
+        type="text" 
+        value={ticker} 
+        onChange={(e) => setTicker(e.target.value)} 
+        placeholder="Enter stock symbol" 
+      />
+      <button onClick={() => setTicker(ticker)}>Fetch Stock Data</button>
 
       {/* Footer */}
       <Footer />
@@ -88,33 +91,4 @@ const DashboardPage = () => {
   );
 };
 
-// Static Data for Dashboard Cards
-const data = [
-  {
-    id: 1,
-    title: 'Total Stocks Tracked',
-    value: '150',
-    description: 'Number of stocks you are currently tracking.',
-  },
-  {
-    id: 2,
-    title: 'Predicted Growth',
-    value: '12%',
-    description: 'Expected growth of tracked stocks based on predictions.',
-  },
-  {
-    id: 3,
-    title: 'Market Overview',
-    value: 'Bullish',
-    description: 'Current market trend for your stocks.',
-  },
-  {
-    id: 4,
-    title: 'Total Investment',
-    value: '$10,000',
-    description: 'Total amount invested in tracked stocks.',
-  },
-];
-
 export default DashboardPage;
-

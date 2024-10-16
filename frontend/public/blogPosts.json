@@ -1,0 +1,18 @@
+
+[
+  {
+    "id": 1,
+    "title": "Investing 101",
+    "content": "Learn the basics of investing in the stock market."
+  },
+  {
+    "id": 2,
+    "title": "Top 10 Stocks to Watch",
+    "content": "Discover the top stocks that analysts recommend."
+  },
+  {
+    "id": 3,
+    "title": "Understanding Risk in Investments",
+    "content": "A guide to managing and understanding investment risks."
+  }
+]

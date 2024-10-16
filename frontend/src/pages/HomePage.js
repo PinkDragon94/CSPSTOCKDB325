@@ -1,10 +1,8 @@
-// src/pages/HomePage.js
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import StockTicker from '../components/StockTicker';
-import StockTable from '../components/StockTable';
+// import StockTicker from '../components/StockTicker';
 import Footer from '../components/Footer';
+import '../styles/HomePage.css';
 
 const HomePage = () => {
   return (
@@ -17,22 +15,27 @@ const HomePage = () => {
           <li><Link to="/blog">Blog</Link></li>
           <li><Link to="/shop">Shop</Link></li>
           <li><Link to="/dashboard">Dashboard</Link></li>
-          <li><Link to="/login">Log In</Link></li>
-          <li><Link to="/signup">Sign Up</Link></li>
         </ul>
       </nav>
-      <StockTicker />
+      {/* <StockTicker /> */}
       <header className="hero">
-        <h2>Welcome to Pink Dragon Stock Shop</h2>
-        <p>Your journey to the perfect workspace begins here.</p>
+        <h2>Lets Learn and Earn Together</h2>
+        <p>Dashboard only Available for logged in users.</p>
         <Link to="/shop" className="shop-button">Shop Now</Link>
       </header>
-      <StockTable />
+
+      {/* New Rectangular Div */}
+      <div className="welcome-box">
+        <h2>Welcome to Pink Dragon Stock Shop</h2>
+        <p>Your journey to the perfect workspace begins here.</p>
+        <Link to="/login" className="nav-button">Log In</Link>
+        <Link to="/signup" className="nav-button">Sign Up</Link>
+      </div>
+
       <Footer />
     </div>
   );
 };
 
 export default HomePage;
-
 

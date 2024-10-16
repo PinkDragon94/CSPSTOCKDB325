@@ -1,73 +1,100 @@
 /* HomePage.css */
 
 .homepage {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  .navbar {
-    background-color: #333;
-    color: white;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-links li a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .nav-links li a:hover {
-    text-decoration: underline;
-  }
-  
-  
-    .hero {
-        /* background-image: url('../public/images/hero-bg.jpg'); 
-    background-image: url('/images/hero-bg.jpg'); */
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
-  }
-  
-  .shop-button {
-    background-color: rgb(230, 12, 121); 
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-  
-  .footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    margin-top: auto; /* Push footer to bottom */
-  }
-  
-  .social-media {
-    margin-top: 10px;
-  }
-  
-  .social-media a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-  }
-  
-  .social-media a:hover {
-    text-decoration: underline;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links li a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.shop-button {
+  background-color: rgb(230, 12, 121);
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Styles for the Welcome Box */
+.welcome-box {
+  max-width: 600px; /* Limit width of the box */
+  margin: 40px auto; /* Center the box with vertical margin */
+  padding: 20px;
+  border: 3px solid rgb(230, 12, 121); /* Pink border */
+  border-radius: 15px; /* Rounded corners */
+  background-color: #f9f9f9; /* Light background for contrast */
+  text-align: center; /* Center text inside the box */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+
+.welcome-box h2 {
+  margin: 0 0 10px; /* Space below the heading */
+}
+
+.nav-button {
+  display: inline-block; /* Ensure padding works */
+  background-color: rgb(230, 12, 121);
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 10px; /* Space between buttons */
+}
+
+.nav-button:hover {
+  background-color: rgb(200, 10, 110); /* Darker shade on hover */
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: auto; /* Push footer to bottom */
+}
+
+.social-media {
+  margin-top: 10px;
+}
+
+.social-media a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.social-media a:hover {
+  text-decoration: underline;
+}

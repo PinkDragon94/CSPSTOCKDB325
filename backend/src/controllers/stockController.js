@@ -1,7 +1,5 @@
 const axios = require('axios');
-const { createJiraIssue } = require('../services/jiraService');
 
-// Analyze stock (fetch data from Alpha Vantage)
 const analyzeStock = async (req, res) => {
   const { ticker } = req.body;
 

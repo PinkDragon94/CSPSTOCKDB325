@@ -1,24 +1,28 @@
-// frontend/src/pages/BlogPage.js
 import React, { useEffect, useState } from 'react';
-import BlogPost from '../components/BlogPost';
-import Footer from '../components/Footer';
-import '../styles/BlogPage.css';
+import BlogPost from '../components/BlogPost'; // Assuming you have a BlogPost component
+import Footer from '../components/Footer'; // Assuming you have a Footer component
+import '../styles/BlogPage.css'; // Import your styles
 
 const BlogPage = () => {
-  const [blogs, setBlogs] = useState([]);
+  const [blogs, setBlogs] = useState([]); // State to hold blog posts
+
+  // Function to fetch blog posts
+  const fetchBlogs = async () => {
+    try {
+      const res = await fetch('/data/blogPosts.json'); // Adjust path as needed
+      if (!res.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await res.json();
+      setBlogs(data);
+    } catch (err) {
+      console.error('Error fetching blog posts:', err);
+    }
+  };
 
   useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const response = await fetch('http://localhost:5000/api/blogs');
-        const data = await response.json();
-        setBlogs(data);
-      } catch (error) {
-        console.error('Error fetching blog posts:', error);
-      }
-    };
-    fetchBlogs();
-  }, []);
+    fetchBlogs(); // Call the fetch function when the component mounts
+  }, []); // Empty dependency array means this runs once
 
   return (
     <div className="blog-page">
@@ -44,7 +48,7 @@ const BlogPage = () => {
       <div className="blog-content">
         <h1>Blog Posts</h1>
         {blogs.length > 0 ? (
-          blogs.map((blog) => <BlogPost key={blog._id} blog={blog} />)
+          blogs.map((blog, index) => <BlogPost key={index} post={blog} />)
         ) : (
           <p>No blog posts available yet.</p>
         )}

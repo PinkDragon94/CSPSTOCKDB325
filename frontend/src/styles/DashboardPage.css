@@ -56,4 +56,29 @@
     color: white;
     text-decoration: none;
   }
+  .signals {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .signals h3 {
+    margin-bottom: 10px;
+  }
+  
+  .signals ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .signals li {
+    margin: 5px 0;
+    font-weight: bold;
+  }
+  
+  .signals li:nth-child(odd) {
+    background-color: #e6f7ff;
+  }
   
