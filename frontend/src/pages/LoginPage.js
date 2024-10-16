@@ -1,8 +1,10 @@
 // src/pages/LoginPage.js
 
 import React, { useRef, useState } from 'react';
-import { useAuth } from '../contexts/AuthContext';
-import { useNavigate, Link } from 'react-router-dom'; // Import Link for navigation
+import { useAuth } from '../contexts/AuthContext'; // Ensure this context handles Google login
+import { useNavigate, Link } from 'react-router-dom';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { auth } from '../firebase'; // Adjust the import based on your firebase setup
 
 const LoginPage = () => {
   const emailRef = useRef();
@@ -11,6 +13,7 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const [error, setError] = useState('');
 
+  // Handle email/password login
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
@@ -21,6 +24,18 @@ const LoginPage = () => {
     } catch (error) {
       console.error('Failed to log in', error);
       setError('Failed to log in. Please check your credentials and try again.');
+    }
+  };
+
+  // Handle Google login
+  const handleGoogleLogin = async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      await signInWithPopup(auth, provider);
+      navigate('/dashboard'); // Redirect after successful login
+    } catch (error) {
+      console.error('Error during Google login:', error);
+      setError('Failed to log in with Google. Please try again.');
     }
   };
 
@@ -47,10 +62,11 @@ const LoginPage = () => {
           <input type="password" ref={passwordRef} placeholder="Password" required />
           <button type="submit" className="btn">Log In</button>
         </form>
+        <button onClick={handleGoogleLogin} className="btn">Log In with Google</button>
+        <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
       </div>
     </div>
   );
 };
 
 export default LoginPage;
-

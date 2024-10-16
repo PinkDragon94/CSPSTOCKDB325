@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import StockTicker from '../components/StockTicker';
 import Footer from '../components/Footer';
 import SignUp from '../components/SignUp';
 
