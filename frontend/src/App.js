@@ -10,6 +10,7 @@ import PrivateRoute from './components/PrivateRoute';
 import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
 
+
 const App = () => {
   return (
     <Router>
