@@ -43,7 +43,7 @@ const products = [
     description: 'A high-performance 27" monitor with ultra-thin bezels.',
     price: '299.99',
     affiliateLink: 'https://www.amazon.com/dell-27-monitor',
-    image: '/images/monitor.jpg', // Local or hosted image
+    image: '/images/mon2.png', // Local or hosted image
   },
   {
     id: 2,
@@ -51,7 +51,7 @@ const products = [
     description: 'Adjustable, comfortable chair for long working hours.',
     price: '199.99',
     affiliateLink: 'https://www.amazon.com/ergonomic-office-chair',
-    image: '/images/chair.jpg',
+    image: '/images/chair.png',
   },
   {
     id: 3,
@@ -59,7 +59,7 @@ const products = [
     description: 'Height-adjustable standing desk for a healthier workspace.',
     price: '399.99',
     affiliateLink: 'https://www.amazon.com/standing-desk',
-    image: '/images/desk.jpg',
+    image: '/images/SUDesk.png',
   },
   {
     id: 4,
@@ -67,7 +67,7 @@ const products = [
     description: 'Learn stock trading from home with this ClickBank course.',
     price: '49.99',
     affiliateLink: 'https://www.clickbank.com/stock-trading-course',
-    image: '/images/trading-course.jpg',
+    image: '/images/Class.png ',
   },
 ];
 
